@@ -18,16 +18,6 @@ public class MergeSortPerformanceTest {
             unsortedArray[i] = rand.nextInt(size+1);
         }
 
-
-        //Startzeit messen MergeSort
-        long mergeStart = System.nanoTime();
-        //sortieren
-        MergeSort mergeSort = new MergeSort(new Merger());
-        mergeSort.sort(unsortedArray);
-        //Endzeit messen MergeSort
-        long mergeEnde = System.nanoTime();
-
-
         //Startzeit messen ParallelSort
         long parallelStart = System.nanoTime();
         //sortieren
@@ -36,6 +26,13 @@ public class MergeSortPerformanceTest {
         //Endzeit messen ParallelSort
         long parallelEnde = System.nanoTime();
 
+        //Startzeit messen MergeSort
+        long mergeStart = System.nanoTime();
+        //sortieren
+        MergeSort mergeSort = new MergeSort(new Merger());
+        mergeSort.sort(unsortedArray);
+        //Endzeit messen MergeSort
+        long mergeEnde = System.nanoTime();
 
         //Differenzen berechnen
         long difMergeInMs = (mergeEnde-mergeStart)/1000000;
