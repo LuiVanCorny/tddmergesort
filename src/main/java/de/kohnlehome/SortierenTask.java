@@ -26,9 +26,12 @@ public class SortierenTask extends RecursiveTask<int[]> {
 
             //leftSideOfArray = sort(leftSideOfArray);
             //rightSideOfArray = sort(rightSideOfArray);
+            SortierenTask leftTask = new SortierenTask(leftSideOfArray, merger);
+            SortierenTask rightTask = new SortierenTask(rightSideOfArray, merger);
+            invokeAll(leftTask, rightTask);
 
 
-            int[] resultArray = merger.merge(leftSideOfArray, rightSideOfArray);
+            int[] resultArray = merger.merge(leftTask.join(), rightTask.join());
 
             return resultArray;
 

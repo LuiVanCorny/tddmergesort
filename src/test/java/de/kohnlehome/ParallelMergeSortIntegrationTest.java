@@ -3,11 +3,11 @@ package de.kohnlehome;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.concurrent.ForkJoinPool;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
-
-public class MergeSortIntegrationTest {
-
+public class ParallelMergeSortIntegrationTest {
     private IMergeSort mergeSort;
 
     @BeforeEach
@@ -15,7 +15,8 @@ public class MergeSortIntegrationTest {
         //Arrange
         IMerger merger = new Merger();
 
-        mergeSort = new MergeSort(merger);
+
+        mergeSort = new ParallelMergeSort(merger);
     }
 
     @Test
