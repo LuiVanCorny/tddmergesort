@@ -21,6 +21,8 @@ public class SortPerformanceTest {
 
         doAnPerformanceTest(new ParallelMergeSort(new Merger()));
         doAnPerformanceTest(new MergeSort(new Merger()));
+        doAnPerformanceTest(new ArraysParallelSort());
+        doAnPerformanceTest(new ArraysSort());
 
     }
 
