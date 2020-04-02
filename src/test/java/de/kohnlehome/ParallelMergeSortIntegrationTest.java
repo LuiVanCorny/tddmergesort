@@ -3,12 +3,10 @@ package de.kohnlehome;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.concurrent.ForkJoinPool;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ParallelMergeSortIntegrationTest {
-    private IMergeSort mergeSort;
+    private ISortAlgorithm mergeSort;
 
     @BeforeEach
     public void init() {
