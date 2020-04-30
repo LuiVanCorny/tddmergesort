@@ -23,7 +23,8 @@ public class SortPerformanceTest {
         doAnPerformanceTest(new MergeSort(new Merger()));
         doAnPerformanceTest(new ArraysParallelSort());
         doAnPerformanceTest(new ArraysSort());
-        doAnPerformanceTest(new ParallelSortThreshold(new Merger(), 3));
+        doAnPerformanceTest(new ParallelSortThreshold(new Merger(), 100000));
+        doAnPerformanceTest(new StreamsParallelSort());
 
     }
 
